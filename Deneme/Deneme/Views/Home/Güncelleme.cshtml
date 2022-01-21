@@ -1,0 +1,32 @@
+﻿@model List<OgrencıModel>
+
+<h1 class="text-center">Öğrenciler</h1>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">İsim</th>
+            <th scope="col">Soyisim</th>
+            <th scope="col">Numara</th>
+            <th scope="col">Bölüm</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Ad</td>
+                    <td>@item.Soyad</td>
+                    <td>@item.Numara</td>
+                    <td>@item.BolumAd</td>
+                    <td>  <a asp-action="Güncelle" asp-controller="Home" asp-route-Id="@item.Id" class="text-decoration-none btn-outline-info btn-lg">Güncelle</a>      </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+
+
